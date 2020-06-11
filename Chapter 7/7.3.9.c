@@ -7,9 +7,9 @@ typedef struct node
     struct stack *next;
 }NODE;
 
-NODE *stack=NULL;
-void pushback(double x);
-double pop();
+NODE *stack=NULL;//栈结构 写成全局变量便于两个操作函数的定义
+void pushback(double x);//压栈操作
+double pop();//出栈操作
 double revPolish();
 
 int main()
@@ -46,6 +46,7 @@ double revPolish()
     {
         isnum=0;
         if(c==' ')continue;
+		//判断代读取值是操作数还是运算符
         if(c>='1'&&c<='9')
         {
             ungetc(c,stdin);
